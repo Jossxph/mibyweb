@@ -1,246 +1,1207 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Miby Team : Inicio</title>
-    <meta name="description" content="A simple moderation Discord bot.">
-    <meta name="theme-color" content="#31a5ff">
-    <link rel="icon" type="image/png" sizes="300x250" href="./assets/img/mibylogo.png">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miby Bot - Discord Bot Multifuncional</title>
+    <meta name="author" content="Miby Bot">
+    <meta name="keywords" content="discord, bot, miby, multifuncional, moderación, diversión, utilidades">
+
+
+    <link rel="icon" href="assets/img/mibylogopng.png" type="image/png">
+    <meta name="description" content="Bot multifuncional para Discord con moderación, diversión y utilidades">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="assets/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@heroicons/react"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
 </head>
 
-<body style="background-color: var(--background);">
+<style>
 
-    <div class="contenedor-total">
+</style>
 
+<body class="bg-gray-900 text-white">
+    <!-- Navigation  -->
+    <nav class="fixed top-0 w-full glass-effect border-t-4 nav-border z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo  -->
+                <div class="flex items-center space-x-3">
+                    <img src="assets/img/mibylogopng.png" alt="Miby Logo" class="w-10 h-10 rounded-full">
+                    <span
+                        class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text">MIBY</span>
+                </div>
 
-        <div id="top" style="height: 12px;">
+                <!-- Desktop Menu  -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="menu-item text-gray-300 hover:text-white transition-colors duration-200">
+                        Características
+                    </a>
+                    <a href="#commands" class="menu-item text-gray-300 hover:text-white transition-colors duration-200">
+                        Comandos
+                    </a>
+                    <a href="https://discord.gg/3UsDs72qMd"
+                        class="bg-blue-600 hover:bg-blue-700 px-6 py-2.5 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25">
+                        Soporte
+                    </a>
+                </div>
 
-            <nav class="navbar navbar-light navbar-expand fixed-top"
-                style="color: var(--main-color);border-top-width: 6px;border-top-style: solid;background: var(--background);">
-
-                <div class="container-fluid"><a class="navbar-brand" href="index.html" style="color: var(--main-color)"><b>MIBY
-                            TEAM</b></a>
-                    <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span
-                            class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navcol-1">
-
-                        <ul class="nav navbar-nav">
-                            <li class="nav-item"><a class="nav-link active smoothScroll" href="#feature"
-                                    style="color: var(--text-color);">Caracteristicas</a></li>
-                            <li class="nav-item"><a class="nav-link smoothScroll" href="#commands"
-                                    style="color: var(--text-color);">Comandos</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#" target="_blank"
-                                    style="color: var(--text-color);">Añadir</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./story.html"
-                                    style="color: var(--text-color);">Story</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#" target="_blank"
-                                    style="color: var(--text-color);">Ayuda</a></li>
-                        </ul>
-
+                <!-- Mobile Menu Button - Mejorado con animación -->
+                <button type="button" onclick="toggleMobileMenu()"
+                    class="md:hidden group p-2 rounded-lg hover:bg-gray-700 transition-colors duration-200 focus:outline-none"
+                    aria-label="Toggle menu">
+                    <div class="relative w-6 h-5">
+                        <span
+                            class="absolute w-6 h-0.5 bg-gray-300 transform transition-all duration-200 group-hover:bg-white"
+                            id="line1"></span>
+                        <span
+                            class="absolute w-6 h-0.5 bg-gray-300 transform transition-all duration-200 group-hover:bg-white top-2"
+                            id="line2"></span>
+                        <span
+                            class="absolute w-6 h-0.5 bg-gray-300 transform transition-all duration-200 group-hover:bg-white top-4"
+                            id="line3"></span>
                     </div>
-                </div>
-            </nav>
-        </div>
-
-        <header class="d-xl-flex flex-column justify-content-xl-center align-items-xl-center"
-            style="height: 418px;text-align: center;margin: 55px;"><img class="rounded" src="./assets/img/mibylogo.png"
-                width="200" height="200" style="margin-top: 30px;">
-            <h1 class="d-xl-flex justify-content-xl-start" style="color: var(--text-color);">Miby Bot</h1>
-            <p style="color: var(--secondary-text-color);">Bot multiusos y de servicios útil para cualquier servidor de
-                Discord con múltiples funcionalidades.</p>
-            <div class="tada animated">
-                <div role="group" class="btn-group"> <a href="https://discord.gg/g7NMa5xkSs" target="_blank" class="btn btn-primary shadow-none"
-                        type="button"
-                        style="margin: 5px;background-color: var(--main-color);border-color: var(--main-color);border-radius: 10px;">Invitame</a>
-
-                    <a class="btn btn-primary smoothScroll shadow-none" role="button"
-                        style="margin: 5px;background-color: var(--main-color);border-color: var(--main-color);border-radius: 10px;"
-                        href="#feature">Características</a>
-                </div>
+                </button>
             </div>
-        </header>
-
-        <div id="feature" style="height: 90px;background: var(--secondary);">
-            <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path fill="var(--background)" fill-opacity="1"
-                        d="M0,96L40,112C80,128,160,160,240,144C320,128,400,64,480,48C560,32,640,64,720,69.3C800,75,880,53,960,58.7C1040,64,1120,96,1200,96C1280,96,1360,64,1400,48L1440,32L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z">
-                    </path>
-                </svg></div>
         </div>
-        <div class="features-boxed" style="background: var(--secondary);">
-            <div class="container" style="color: var(--main-color);">
 
-                <div class="intro">
-                    <h2 class="text-center" style="color: var(--text-color);">Caracteristicas del bot</h2>
-                </div>
-
-                <div class="row justify-content-center features">
-                    <div class="col-sm-6 col-md-5 col-lg-4 item">
-                        <div id="features" class="box" style="border-radius: 34px;"><i class="fa fa-bolt icon"
-                                style="color: var(--main-color);"></i>
-                            <h3 class="name">Rapido</h3>
-                            <p class="description" style="color: var(--secondary-text-color);">Miby es un bot
-                                superrápido.¡Pero que sea rápido no significa que sea de menor calidad!<br></p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-5 col-lg-4 item">
-                        <div id="features" class="box" style="border-radius: 34px;"><i class="fa fa-flag icon"
-                                style="color: var(--main-color);"></i>
-                            <h3 class="name">Word Filter</h3>
-                            <p class="description" style="color: var(--secondary-text-color);">Codex Eunice has a word
-                                filter. This is great for Bible servers or clean servers in general.<br></p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-5 col-lg-4 item">
-                        <div id="features" class="box"><i class="fa fa-lock icon" style="color: var(--main-color);"></i>
-                            <h3 class="name">Secure</h3>
-                            <p class="description" style="color: var(--secondary-text-color);">All information that
-                                Codex
-                                Eunice collects is never, and I repeat <b>NEVER</b> released or sold to anyone.<br></p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-5 col-lg-4 item">
-                        <div id="features" class="box"><i class="fa ion-stop icon"
-                                style="color: var(--main-color);"></i>
-                            <h3 class="name">Secure</h3>
-                            <p class="description" style="color: var(--secondary-text-color);">All information that
-                                Codex
-                                Eunice collects is never, and I repeat <b>NEVER</b> released or sold to anyone.<br></p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-5 col-lg-4 item">
-                        <div id="features" class="box"><i class="fa fa-lock icon" style="color: var(--main-color);"></i>
-                            <h3 class="name">Secure</h3>
-                            <p class="description" style="color: var(--secondary-text-color);">All information that
-                                Codex
-                                Eunice collects is never, and I repeat <b>NEVER</b> released or sold to anyone.<br></p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-5 col-lg-4 item">
-                        <div id="features" class="box"><i class="fa fa-smile-o icon"
-                                style="color: var(--main-color);"></i>
-                            <h3 class="name">Happy Users</h3>
-                            <p class="description" style="color: var(--secondary-text-color);">Codex Eunice supports
-                                family-friendly content in a supportive, encouraging, and positive environment.<br></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div></div>
-        </div>
-        <div style="background-color: var(--background);">
-            <div style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
-                    style="height: 100%; width: 100%;">
-                    <path d="M-41.53,-9.56 C167.83,173.98 302.14,-60.89 534.09,89.10 L500.00,0.00 L0.00,0.00 Z"
-                        style="stroke: none; fill: var(--secondary);"></path>
-                </svg></div>
-        </div>
-        <div id="commands">
-            <section>
-                <div class="container-fluid text-white">
-                    <div class="row row-cols-3 justify-content-center" style="color: var(--secondary-text-color);">
-                        <div class="col-auto col-md-6 col-lg-4 text-center pb-5 pt-5 number-item love_counter">
-                            <h1 class="love_count servers" id="servers" style="font-size: 70px;">0+</h1>
-                            <h4 style="color: var(--main-color);margin-top: -6px;">Servidores totales</h4>
-                        </div>
-                        <div class="col-auto col-lg-4 text-center align-self-center pb-5 pt-5 love_counter">
-                            <h1 class="love_count users" id="users" style="font-size: 70px;">0+</h1>
-                            <h4 style="color: var(--main-color);margin-top: -6px;">Total de usuarios</h4>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <div class="container">
-                <h2>Todos los comandos de Miby</h2>
-                <div class="accordion">
-
-                    <div class="accordion-item">
-                        <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Slash
-                                Commands</span><span class="icon" aria-hidden="true"></span></button>
-                        <div class="accordion-content">
-                            <p>/setup_bot - starts the setting up process<br> /warn - warns any member you want<br>
-                                /timeout
-                                - times out any member you want<br> /kick - kicks any member you want<br> /ban - bans
-                                any
-                                member you want<br> /clear - allows you to delete either a set number of messages or all
-                                messages from a channel</p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">Non-Slash
-                                Commands</span><span class="icon" aria-hidden="true"></span></button>
-                        <div class="accordion-content">
-                            <p>$help - lists all the non-slash commands available<br> $react - reacts to the message
-                                with a
-                                random emoji
-                            </p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">Non-Slash
-                                Commands</span><span class="icon" aria-hidden="true"></span></button>
-                        <div class="accordion-content">
-                            <p>$help - lists all the non-slash commands available<br> $react - reacts to the message
-                                with a
-                                random emoji
-                            </p>
-                        </div>
-                    </div>
-
+        <!-- Mobile Menu Mejorado -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-4 pt-2 pb-3 space-y-2">
+                <a href="#features"
+                    class="block px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-all duration-200 transform hover:translate-x-2">
+                    <i data-feather="star" class="w-5 h-5 inline mr-2"></i>
+                    Características
+                </a>
+                <a href="#commands"
+                    class="block px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-all duration-200 transform hover:translate-x-2">
+                    <i data-feather="terminal" class="w-5 h-5 inline mr-2"></i>
+                    Comandos
+                </a>
+                <div class="pt-2 mt-2 border-t border-gray-700">
+                    <a href="#"
+                        class="block bg-blue-600 hover:bg-blue-700 px-4 py-3 rounded-lg text-center font-medium transition-all duration-200">
+                        Soporte
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="team-clean" style="background: rgba(0,0,0,0);">
-            <div class="container" style="filter: blur(0px);padding-bottom: 0px;">
-                <h3 class="text-center name" style="color: var(--secondary-text-color)">Servidores donde esta Miby!
+    </nav>
+
+    <script>
+        // Mejorar la funcionalidad del menú hamburguesa
+        let isMenuOpen = false;
+
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const line1 = document.getElementById('line1');
+            const line2 = document.getElementById('line2');
+            const line3 = document.getElementById('line3');
+
+            isMenuOpen = !isMenuOpen;
+
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                // Animación de las líneas para formar una X
+                line1.style.transform = 'rotate(45deg) translate(5px, 5px)';
+                line2.style.opacity = '0';
+                line3.style.transform = 'rotate(-45deg) translate(5px, -5px)';
+            } else {
+                mobileMenu.classList.add('hidden');
+                // Restaurar las líneas a su posición original
+                line1.style.transform = 'none';
+                line2.style.opacity = '1';
+                line3.style.transform = 'none';
+            }
+        }
+
+        // Cerrar el menú móvil cuando se hace clic en un enlace
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) {
+                    toggleMobileMenu();
+                }
+            });
+        });
+
+        // Cerrar el menú móvil cuando se hace scroll
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > lastScroll && isMenuOpen) {
+                toggleMobileMenu();
+            }
+            lastScroll = currentScroll;
+        });
+
+        // Inicializar los íconos de Feather
+        feather.replace();
+    </script>
+
+
+    <!-- Hero Section  -->
+    <header class="pt-20 pb-20 px-relative hero-bg flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 "></div>
+
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <!-- Logo Container -->
+            <div class="mb-8 sm:mb-12 relative group">
+                <div
+                    class="absolute -inset-1 rounded-full opacity-75 group-hover:opacity-100 blur transition duration-1000 group-hover:duration-200">
+                </div>
+                <img src="assets/img/mibylogopng.png" alt="Miby Logo"
+                    class="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto rounded-full shadow-2xl floating-animation">
+                <!-- Status Badge  -->
+                <div
+                    class="absolute -bottom-2 right-1/2 transform translate-x-16 bg-green-500 w-4 h-4 rounded-full border-2 border-gray-900">
+                    <div class="absolute inset-0 bg-green-500 rounded-full animate-ping"></div>
+                </div>
+            </div>
+
+            <!-- Title  -->
+            <div class="relative mb-6 sm:mb-8">
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-black mb-2 gradient-animated tracking-tight">
+                    Miby Discord Bot
+                </h1>
+                <span class="block text-lg sm:text-xl text-blue-400 font-medium tracking-wide">Tu ayudante en la
+                    creación de servidores profesional</span>
+            </div>
+
+            <!-- Description  -->
+            <p
+                class="text-lg sm:text-xl md:text-2xl pt-10 text-gray-300 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed">
+                Mejora tu servidor de Discord con
+                <span class="relative inline-block px-2">
+                    <span class="absolute inset-0 bg-blue-500/20 blur rounded-lg"></span>
+                    <span class="relative text-blue-400 font-semibold">moderación</span>
+                </span>,
+                <span class="relative inline-block px-2">
+                    <span class="absolute inset-0 bg-blue-500/20 blur rounded-lg"></span>
+                    <span class="relative text-blue-400 font-semibold">diversión</span>
+                </span> y
+                <span class="relative inline-block px-2">
+                    <span class="absolute inset-0 bg-blue-500/20 blur rounded-lg"></span>
+                    <span class="relative text-blue-400 font-semibold">utilidades avanzadas</span>
+                </span>
+            </p>
+
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row justify-center pt-30 gap-4 sm:gap-6 px-4 mb-12">
+                <!-- Primary Button -->
+                <a href="#" class="group relative">
+                    <div
+                        class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg opacity-75 group-hover:opacity-100 blur transition duration-300 animate-pulse">
+                    </div>
+                    <button
+                        class="relative px-8 py-4 bg-gray-900 rounded-lg leading-none flex items-center justify-center space-x-3 hero-button-glow w-full sm:w-auto">
+                        <span class="text-gray-100 text-lg font-semibold whitespace-nowrap">
+                            Invitar a Miby
+                        </span>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 text-blue-400 transition-transform duration-300 group-hover:translate-x-1"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </button>
+                </a>
+
+                <!-- Secondary Button -->
+                <a href="#features"
+                    class="relative overflow-hidden group px-8 py-4 bg-gray-800/50 rounded-lg font-semibold text-lg transition-all duration-300 border border-gray-700 hover:border-blue-400 backdrop-blur-sm">
+                    <span class="relative z-10 flex items-center justify-center space-x-2">
+                        <span>Documentación</span>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5 transition-transform duration-300 group-hover:translate-y-1" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </span>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-blue-400/10 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    </div>
+                </a>
+            </div>
+
+            <!-- Server Stats -->
+            <div class="flex justify-center pt-20 gap-8 sm:gap-16">
+                <div class="text-center group">
+                    <div
+                        class="text-3xl sm:text-4xl font-bold text-blue-400 group-hover:text-blue-300 transition-colors duration-300">
+                        +4</div>
+                    <div class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">Servidores</div>
+                </div>
+                <div class="text-center group">
+                    <div
+                        class="text-3xl sm:text-4xl font-bold text-blue-400 group-hover:text-blue-300 transition-colors duration-300">
+                        300+</div>
+                    <div class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">Usuarios</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .countdown-section {
+            background-image: radial-gradient(circle at center, rgba(37, 99, 235, 0.1) 0%, rgba(0, 0, 0, 0) 70%),
+                linear-gradient(to bottom, #0F172A, #1E293B);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .countdown-section::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232563EB' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+            animation: move-background 30s linear infinite;
+        }
+
+        @keyframes move-background {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        .countdown-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .countdown-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg,
+                    rgba(37, 99, 235, 0) 0%,
+                    rgba(37, 99, 235, 0.1) 50%,
+                    rgba(37, 99, 235, 0) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .countdown-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(37, 99, 235, 0.5);
+            box-shadow: 0 0 30px rgba(37, 99, 235, 0.3);
+        }
+
+        .countdown-card:hover::after {
+            opacity: 1;
+        }
+
+        .countdown-number {
+            background: linear-gradient(135deg, #60A5FA, #2563EB);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(37, 99, 235, 0.5);
+        }
+
+        .countdown-label {
+            background: linear-gradient(135deg, #60A5FA, #2563EB);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+
+    <section class="min-h-[500px] py-24 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h1
+                    class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
+                    ¡El Futuro de Discord Está Llegando!
+                </h1>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    Prepárate para una nueva era en la gestión de servidores.
+                    <span class="font-semibold text-blue-400">17 de septiembre de 2025</span>
+                </p>
+            </div>
+
+            <div id="countdown" class="flex flex-wrap justify-center gap-9">
+                <div class="countdown-card w-38 p-8 rounded-2xl text-center">
+                    <span id="days" class="countdown-number text-6xl md:text-7xl font-bold">00</span>
+                    <span class="block text-base mt-3 font-medium countdown-label">Días</span>
+                </div>
+                <div class="countdown-card w-36 p-8 rounded-2xl text-center">
+                    <span id="hours" class="countdown-number text-6xl md:text-7xl font-bold">00</span>
+                    <span class="block text-base mt-3 font-medium countdown-label">Horas</span>
+                </div>
+                <div class="countdown-card w-36 p-8 rounded-2xl text-center">
+                    <span id="minutes" class="countdown-number text-6xl md:text-7xl font-bold">00</span>
+                    <span class="block text-base mt-3 font-medium countdown-label">Minutos</span>
+                </div>
+                <div class="countdown-card w-36 p-8 rounded-2xl text-center">
+                    <span id="seconds" class="countdown-number text-6xl md:text-7xl font-bold">00</span>
+                    <span class="block text-base mt-3 font-medium countdown-label">Segundos</span>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <script>
+        const launchDate = new Date("2025-09-17T00:00:00Z").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeLeft = launchDate - now;
+
+            if (timeLeft > 0) {
+                // Cálculo correcto de días considerando la fecha actual
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                const elements = {
+                    days: document.getElementById("days"),
+                    hours: document.getElementById("hours"),
+                    minutes: document.getElementById("minutes"),
+                    seconds: document.getElementById("seconds")
+                };
+
+                for (const [unit, value] of Object.entries({ days, hours, minutes, seconds })) {
+                    const element = elements[unit];
+                    const formattedValue = String(value).padStart(2, "0");
+
+                    if (element.textContent !== formattedValue) {
+                        element.textContent = formattedValue;
+                        element.classList.add("scale-110", "transition-transform");
+                        setTimeout(() => {
+                            element.classList.remove("scale-110");
+                        }, 100);
+                    }
+                }
+            } else {
+                document.getElementById("countdown").innerHTML = `
+                    <div class="w-full max-w-2xl">
+                        <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-12 rounded-2xl shadow-2xl text-center">
+                            <h3 class="text-4xl font-bold text-white mb-6">¡Miby ya está disponible!</h3>
+                            <p class="text-white/90 text-lg mb-8">Únete a miles de servidores que ya están usando Miby</p>
+                            <a href="#" class="inline-block px-8 py-4 bg-white text-blue-600 rounded-xl font-semibold hover:bg-gray-100 transition-colors">
+                                Comenzar ahora
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Actualizar cada segundo
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Actualización inicial
+    </script>
+
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 ">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6 gradient-text">
+                    Sube a otro nivel
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                    Descubre cómo Miby puede transformar tu comunidad de Discord con comandos rapidos y
+                    características únicas.
+                </p>
+            </div>
+
+            <!-- Features Grid -->
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Moderación -->
+    <div class="feature-card gradient-border rounded-xl p-8 transform hover:scale-102 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
+        <div class="flex items-start space-x-5">
+            <div class="bg-blue-500/15 rounded-xl p-4 backdrop-blur-sm shadow-inner">
+                <i data-feather="shield" class="w-10 h-10 text-blue-500 feature-icon"></i>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-blue-400 transition-colors">
+                    Moderación Pro
                 </h3>
-                <div class="intro"></div>
-                <div class="row row-cols-4 d-flex d-xl-flex justify-content-center justify-content-xl-center people"
-                    style="padding-bottom: 0px;">
-                    <div class="col-auto col-md-6 col-lg-4 yeet"><a href="https://discord.gg/g7NMa5xkSs"
-                            target="_blank"><img class="rounded-circle partner"
-                                src="https://cdn.discordapp.com/attachments/1060232307606290512/1285812097183387731/loguitomibyori.png?ex=66eba155&is=66ea4fd5&hm=35021c16ba904be93168def744f11c346a030142e09b2efa3092a4a9bc294a64&"></a>
-                        <p>👻 El reino de Miby</p>
-                    </div>
-                </div>
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    Sistema avanzado con IA para mantener tu servidor seguro y libre de spam
+                    automáticamente.
+                </p>
+                <ul class="space-y-3">
+                    <li class="flex items-center text-gray-400 group">
+                        <svg class="w-5 h-5 text-blue-500 mr-3 flex-shrink-0 group-hover:text-blue-400 transition-colors" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span class="group-hover:text-gray-300 transition-colors">Filtros inteligentes de contenido</span>
+                    </li>
+                    <li class="flex items-center text-gray-400 group">
+                        <svg class="w-5 h-5 text-blue-500 mr-3 flex-shrink-0 group-hover:text-blue-400 transition-colors" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span class="group-hover:text-gray-300 transition-colors">Sistema de advertencias personalizable</span>
+                    </li>
+                    <li class="flex items-center text-gray-400 group">
+                        <svg class="w-5 h-5 text-blue-500 mr-3 flex-shrink-0 group-hover:text-blue-400 transition-colors" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span class="group-hover:text-gray-300 transition-colors">Registro detallado de acciones</span>
+                    </li>
+                </ul>
             </div>
         </div>
+    </div>
 
-        <!-- ! PIE DE PAGINA -->
+    <!-- Diversión -->
+    <div class="feature-card gradient-border rounded-xl p-8 relative overflow-hidden transform hover:scale-102 transition-all duration-300 hover:shadow-lg hover:shadow-red-500/20">
+        <!-- Etiqueta de Próximamente -->
+        <div
+            class="absolute top-0 right-0 bg-red-500 text-white px-10 py-2 transform translate-x-1/4 translate-y-1/5 rotate-45 text-center font-bold tracking-wider shadow-lg">
+            ‎ ‎ ‎ ‎ SOON
+        </div>
 
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="var(--secondary)" fill-opacity="1"
-                    d="M0,160L48,154.7C96,149,192,139,288,154.7C384,171,480,213,576,218.7C672,224,768,192,864,181.3C960,171,1056,181,1152,192C1248,203,1344,213,1392,218.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-                </path>
-            </svg>
-            <div class="footer-dark" style="background: var(--secondary);padding-top: 0px;padding-bottom: 0px;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col item social"><a class="smoothScroll" href="#top"><i
-                                    class="icon ion-android-arrow-up"></i></a></div>
+        <div class="flex items-start space-x-5 opacity-80 hover:opacity-100 transition-opacity">
+            <div class="bg-pink-500/15 rounded-xl p-4 backdrop-blur-sm shadow-inner">
+                <i data-feather="smile" class="w-10 h-10 text-pink-500 feature-icon"></i>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-pink-400 transition-colors">
+                    Diversión Ilimitada
+                </h3>
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    Próximamente: Juegos, memes, música y más para mantener a tus miembros entretenidos y
+                    activos.
+                </p>
+                <ul class="space-y-3">
+                    <li class="flex items-center text-gray-400 line-through group">
+                        <svg class="w-5 h-5 text-pink-500 mr-3 flex-shrink-0" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Comandos de juegos interactivos</span>
+                    </li>
+                    <li class="flex items-center text-gray-400 line-through group">
+                        <svg class="w-5 h-5 text-pink-500 mr-3 flex-shrink-0" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Reproducción de música</span>
+                    </li>
+                    <li class="flex items-center text-gray-400 line-through group">
+                        <svg class="w-5 h-5 text-pink-500 mr-3 flex-shrink-0" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Generador de memes</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nueva tarjeta: Próximamente Más Información -->
+    <div class="feature-card gradient-border rounded-xl p-8 relative overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 transform hover:scale-102 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20">
+        <div class="absolute -right-12 -top-12 w-40 h-40 bg-purple-500/10 rounded-full blur-xl"></div>
+        <div class="absolute -left-12 -bottom-12 w-40 h-40 bg-blue-500/10 rounded-full blur-xl"></div>
+        
+        <div class="flex flex-col items-center justify-center text-center h-full relative z-10">
+            <div class="bg-purple-500/15 rounded-full p-6 backdrop-blur-sm shadow-inner mb-6">
+                <i data-feather="star" class="w-12 h-12 text-purple-400 feature-icon"></i>
+            </div>
+            
+            <h3 class="text-2xl font-bold mb-4 text-white">
+                Próximamente más<br>funcionalidades
+            </h3>
+            
+            <p class="text-gray-300 leading-relaxed mb-8">
+                Estamos trabajando constantemente para añadir nuevas características y mejorar tu experiencia con Miby.
+            </p>
+            
+            <div class="flex space-x-2 mb-6">
+                <span class="inline-block bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm">Economía</span>
+                <span class="inline-block bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-sm">Niveles</span>
+                <span class="inline-block bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm">¡Y más!</span>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+    </section>
+
+    <! -- Innovación Section -->
+
+        <section class="py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4 gradient-text text-transparent bg-clip-text">
+                        Innovación que Transforma
+                    </h2>
+                    <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                        Descubre cómo Miby está revolucionando la gestión de comunidades en Discord
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Funcionalidades -->
+                    <div class="stat-card rounded-2xl p-8 text-center group">
+                        <div
+                            class="bg-blue-500/10 rounded-xl p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                            <i data-feather="layers" class="w-12 h-12 text-blue-500 stat-icon"></i>
+                        </div>
+                        <div class="stat-number text-4xl lg:text-5xl mb-3">20+</div>
+                        <div class="text-gray-400 text-lg font-medium">Funcionalidades Únicas</div>
+                        <p class="text-gray-500 mt-3 text-sm">Herramientas diseñadas para crecer</p>
                     </div>
-                    <p class="copyright" style="color: var(--text-color);">Miby Team © 2024 Jossxph | <a
-                            href="politica.html" style="color: white; text-decoration:underline;">Política de
-                            Privacidad</a> && <a href="terminos.html"
-                            style="color: white; text-decoration: underline;">Términos de Servicio</a></p>
-                    <p class="copyright" style="color: var(--text-color);padding: 0px;">
+
+                    <!-- Tiempo de respuesta -->
+                    <div class="stat-card rounded-2xl p-8 text-center group">
+                        <div
+                            class="bg-blue-500/10 rounded-xl p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                            <i data-feather="zap" class="w-12 h-12 text-blue-500 stat-icon"></i>
+                        </div>
+                        <div class="stat-number text-4xl lg:text-5xl mb-3">0.5s</div>
+                        <div class="text-gray-400 text-lg font-medium">Tiempo de Respuesta</div>
+                        <p class="text-gray-500 mt-3 text-sm">Velocidad sin comprometer calidad</p>
+                    </div>
+
+                    <!-- Actualizaciones -->
+                    <div class="stat-card rounded-2xl p-8 text-center group">
+                        <div
+                            class="bg-blue-500/10 rounded-xl p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                            <i data-feather="refresh-cw" class="w-12 h-12 text-blue-500 stat-icon"></i>
+                        </div>
+                        <div class="stat-number text-4xl lg:text-5xl mb-3">2x</div>
+                        <div class="text-gray-400 text-lg font-medium">Actualizaciones Mensuales</div>
+                        <p class="text-gray-500 mt-3 text-sm">Innovación constante</p>
+                    </div>
+                </div>
+
+                <!-- Extra Stats Bar -->
+                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <div class="bg-gray-800/50 rounded-lg p-4 text-center">
+                        <div class="text-blue-400 font-semibold mb-1">99.5%</div>
+                        <div class="text-gray-400 text-sm">Disponibilidad</div>
+                    </div>
+                    <div class="bg-gray-800/50 rounded-lg p-4 text-center">
+                        <div class="text-blue-400 font-semibold mb-1">10+</div>
+                        <div class="text-gray-400 text-sm">Integraciones</div>
+                    </div>
+                    <div class="bg-gray-800/50 rounded-lg p-4 text-center">
+                        <div class="text-blue-400 font-semibold mb-1">24/7</div>
+                        <div class="text-gray-400 text-sm">Soporte</div>
+                    </div>
+                    <div class="bg-gray-800/50 rounded-lg p-4 text-center">
+                        <div class="text-blue-400 font-semibold mb-1">100%</div>
+                        <div class="text-gray-400 text-sm">Personalizable</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Commands Section -->
+        <section id="commands" class="py-20">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Comandos Disponibles</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Descubre todas las funcionalidades que nuestro bot tiene
+                        para
+                        ofrecer con estos comandos intuitivos y fáciles de usar.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    <div
+                        class="bg-gray-800 p-8 rounded-xl shadow-2xl transform hover:scale-102 transition-transform duration-300">
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex items-center">
+                                <svg class="w-7 h-7 text-blue-500 mr-3" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                                <h3 class="text-2xl font-bold text-white">Comandos Slash de Miby</h3>
+                            </div>
+                            <span
+                                class="bg-blue-600 text-xs font-medium px-3 py-1 rounded-full text-white">Actualizado</span>
+                        </div>
+
+                        <p class="text-gray-300 mb-6">Utiliza estos comandos para administrar tu servidor de Discord con
+                            Miby.</p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-gray-700 rounded-lg p-4 hover:bg-gray-650 transition-colors duration-200">
+                                <div class="flex items-center mb-2">
+                                    <code class="text-blue-400 bg-gray-900 px-3 py-1 rounded-md font-mono">/help</code>
+                                </div>
+                                <p class="text-gray-300 text-sm">Explora todas las categorías y comandos disponibles</p>
+                            </div>
+
+                            <div class="bg-gray-700 rounded-lg p-4 hover:bg-gray-650 transition-colors duration-200">
+                                <div class="flex items-center mb-2">
+                                    <code class="text-blue-400 bg-gray-900 px-3 py-1 rounded-md font-mono">/setup</code>
+                                </div>
+                                <p class="text-gray-300 text-sm">Personaliza la configuración de tu servidor</p>
+                            </div>
+
+                            <div class="bg-gray-700 rounded-lg p-4 hover:bg-gray-650 transition-colors duration-200">
+                                <div class="flex items-center mb-2">
+                                    <code class="text-blue-400 bg-gray-900 px-3 py-1 rounded-md font-mono">/warn</code>
+                                </div>
+                                <p class="text-gray-300 text-sm">Envía advertencias a miembros del servidor</p>
+                            </div>
+
+                            <div class="bg-gray-700 rounded-lg p-4 hover:bg-gray-650 transition-colors duration-200">
+                                <div class="flex items-center mb-2">
+                                    <code
+                                        class="text-blue-400 bg-gray-900 px-3 py-1 rounded-md font-mono">/timeout</code>
+                                </div>
+                                <p class="text-gray-300 text-sm">Suspende temporalmente a un miembro</p>
+                            </div>
+
+                            <div class="bg-gray-700 rounded-lg p-4 hover:bg-gray-650 transition-colors duration-200">
+                                <div class="flex items-center mb-2">
+                                    <code class="text-blue-400 bg-gray-900 px-3 py-1 rounded-md font-mono">/kick</code>
+                                </div>
+                                <p class="text-gray-300 text-sm">Expulsa a un miembro del servidor</p>
+                            </div>
+
+                            <div class="bg-gray-700 rounded-lg p-4 hover:bg-gray-650 transition-colors duration-200">
+                                <div class="flex items-center mb-2">
+                                    <code class="text-blue-400 bg-gray-900 px-3 py-1 rounded-md font-mono">/ban</code>
+                                </div>
+                                <p class="text-gray-300 text-sm">Prohíbe el acceso a un miembro</p>
+                            </div>
+
+                            <div class="bg-gray-700 rounded-lg p-4 hover:bg-gray-650 transition-colors duration-200">
+                                <div class="flex items-center mb-2">
+                                    <code class="text-blue-400 bg-gray-900 px-3 py-1 rounded-md font-mono">/clear</code>
+                                </div>
+                                <p class="text-gray-300 text-sm">Elimina mensajes del canal actual</p>
+                            </div>
+
+                            <div class="bg-gray-700 rounded-lg p-4 hover:bg-gray-650 transition-colors duration-200">
+                                <div class="flex items-center mb-2">
+                                    <code class="text-blue-400 bg-gray-900 px-3 py-1 rounded-md font-mono">/info</code>
+                                </div>
+                                <p class="text-gray-300 text-sm">Muestra información sobre usuarios o el servidor</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 text-center">
+                            <a href="#"
+                                class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200">
+                                Ver todos los comandos
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Comandos con Prefijo -->
+                    <div
+                        class="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-xl shadow-lg transform hover:scale-102 transition-transform duration-300 border-2 border-purple-500/30">
+                        <div class="flex items-center mb-6">
+                            <svg class="w-8 h-8 text-purple-400 mr-4" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                            </svg>
+                            <h3 class="text-2xl font-bold text-white">Comandos con Prefijo</h3>
+                        </div>
+
+                        <div class="bg-gray-800/70 p-6 rounded-lg border border-purple-500/20 backdrop-blur-sm">
+                            <!-- Estado de desarrollo -->
+                            <div class="text-center mb-6">
+                                <span
+                                    class="inline-block bg-purple-600/20 text-purple-300 px-4 py-2 rounded-full font-semibold text-lg mb-3">
+                                    🚧 En Desarrollo 🚧
+                                </span>
+                                <p class="text-gray-300">
+                                    Los comandos con prefijo estarán disponibles próximamente.
+                                    <span class="block mt-2 text-sm text-gray-400">¡Mantente atento a las
+                                        actualizaciones!</span>
+                                </p>
+                            </div>
+
+                            <!-- Vista previa de futuros comandos -->
+                            <div class="mt-6 border-t border-gray-700 pt-4">
+                                <h4 class="text-lg font-medium text-purple-300 mb-3">Ejemplos de comandos que vendrán:
+                                </h4>
+                                <div class="space-y-3">
+                                    <div class="bg-gray-900/80 p-3 rounded flex items-center">
+                                        <div class="bg-purple-600/30 p-2 rounded-md mr-3">
+                                            <span class="text-purple-300 font-mono">!help</span>
+                                        </div>
+                                        <p class="text-gray-400">Muestra todos los comandos disponibles</p>
+                                    </div>
+                                    <div class="bg-gray-900/80 p-3 rounded flex items-center">
+                                        <div class="bg-purple-600/30 p-2 rounded-md mr-3">
+                                            <span class="text-purple-300 font-mono">!play</span>
+                                        </div>
+                                        <p class="text-gray-400">Reproduce música en tu canal de voz</p>
+                                    </div>
+                                    <div class="bg-gray-900/80 p-3 rounded flex items-center">
+                                        <div class="bg-purple-600/30 p-2 rounded-md mr-3">
+                                            <span class="text-purple-300 font-mono">!info</span>
+                                        </div>
+                                        <p class="text-gray-400">Información sobre Miby</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Call to action -->
+                            <div class="mt-6 text-center">
+                                <button
+                                    class="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-6 rounded-full transition-colors duration-300 flex items-center mx-auto">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                                    </svg>
+                                    Suscribirse a las actualizaciones
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+        </section>
+
+        <!-- Servers Section -->
+        <section class="py-20 m-20" id="servers">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Servidores Destacados</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Únete a nuestra creciente comunidad de servidores
+                        destacados
+                        donde podrás disfrutar de experiencias únicas.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- El reino de Miby -->
+                    <a href="" class="group relative">
+                        <div class="absolute -top-4 right-4 z-20">
+                            <div
+                                class="bg-blue-600 text-white px-4 py-1 rounded-full font-bold text-sm transform rotate-2 shadow-lg border-2 border-blue-800 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                PRÓXIMAMENTE
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-gray-800 p-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:bg-gray-750 border border-gray-700 hover:border-blue-500/50 shadow-lg relative overflow-hidden">
+                            <!-- Background glow effect -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-blue-900/5 to-cyan-900/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            </div>
+
+                            <div class="relative">
+                                <div
+                                    class="absolute inset-0 bg-blue-500/30 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100">
+                                </div>
+                                <img src="assets/img/mibylogopng.png" alt="El reino de Miby"
+                                    class="w-24 h-24 md:w-32 md:h-32 mx-auto rounded-full mb-6 relative z-10 border-2 border-blue-400/30 p-1">
+                            </div>
+
+                            <h3
+                                class="text-xl md:text-2xl font-bold group-hover:text-blue-400 transition-colors duration-300 mb-3 text-center">
+                                El reino de Miby
+                            </h3>
+
+                            <p
+                                class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 text-center">
+                                Una comunidad real de Miby.
+                            </p>
+
+                            <div class="mt-6 flex items-center justify-center space-x-3 text-sm text-gray-400">
+                                <span class="flex items-center">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                                    Online
+                                </span>
+                                <span>•</span>
+                            </div>
+
+                            <button
+                                class="mt-6 w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-all duration-300 flex items-center justify-center group-hover:shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                                Únete a la comunidad
+                            </button>
+                        </div>
+                    </a>
+
+                    <!-- ZenForge Studio -->
+                    <a href="" class="group relative">
+                        <div class="absolute -top-4 right-4 z-20">
+                            <div
+                                class="bg-purple-600 text-white px-4 py-1 rounded-full font-bold text-sm transform rotate-2 shadow-lg border-2 border-purple-800 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                PRÓXIMAMENTE
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-gray-800 p-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:bg-gray-750 border border-gray-700 hover:border-purple-500/50 shadow-lg relative overflow-hidden">
+                            <!-- Background glow effect -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-purple-900/5 to-blue-900/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            </div>
+
+                            <div class="relative">
+                                <div
+                                    class="absolute inset-0 bg-purple-500/30 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100">
+                                </div>
+                                <img src="assets/img/LOGOZENFORGE-sinfondo.png" alt="ZenForge Studio"
+                                    class="w-24 h-24 md:w-32 md:h-32 mx-auto rounded-full mb-6 relative z-10 border-2 border-purple-400/30 p-1">
+                            </div>
+
+                            <h3
+                                class="text-xl md:text-2xl font-bold group-hover:text-purple-400 transition-colors duration-300 mb-3 text-center">
+                                ZenForge Studio
+                            </h3>
+
+                            <p
+                                class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 text-center">
+                                Espacio para desarrolladores y artistas.
+                            </p>
+
+                            <div class="mt-6 flex items-center justify-center space-x-3 text-sm text-gray-400">
+                                <span class="flex items-center">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                                    Online
+                                </span>
+                                <span>•</span>
+                            </div>
+
+                            <button
+                                class="mt-6 w-full py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition-all duration-300 flex items-center justify-center group-hover:shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                                Únete a la comunidad
+                            </button>
+                        </div>
+                    </a>
+
+                    <!-- LegendX Network -->
+                    <a href="https://discord.gg/WGcRVBkCqW" class="group relative">
+                        <div class="absolute -top-4 right-4 z-20">
+                            <div
+                                class="bg-green-600 text-white px-4 py-1 rounded-full font-bold text-sm transform rotate-2 shadow-lg border-2 border-green-800 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                ACTIVO
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-gray-800 p-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:bg-gray-750 border border-gray-700 hover:border-cyan-500/50 shadow-lg relative overflow-hidden">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-cyan-900/5 to-blue-900/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            </div>
+
+                            <div class="relative">
+                                <div
+                                    class="absolute inset-0 bg-cyan-500/30 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100">
+                                </div>
+                                <img src="assets/img/legendxnewlog3o.png" alt="LegendX Network"
+                                    class="w-24 h-24 md:w-32 md:h-32 mx-auto rounded-full mb-6 relative z-10 border-2 border-cyan-400/30 p-1">
+                            </div>
+
+                            <h3
+                                class="text-xl md:text-2xl font-bold group-hover:text-cyan-400 transition-colors duration-300 mb-3 text-center">
+                                LegendX Network
+                            </h3>
+
+                            <p
+                                class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 text-center">
+                                La mejor comunidad de minecraft, Unete a los Legendarios del PVP.
+                            </p>
+
+                            <div class="mt-6 flex items-center justify-center space-x-3 text-sm text-gray-400">
+                                <span class="flex items-center">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                                    Online
+                                </span>
+                                <span>•</span>
+                                <span>+100 miembros</span>
+                            </div>
+
+                            <button
+                                class="mt-6 w-full py-2 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg font-medium transition-all duration-300 flex items-center justify-center group-hover:shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                                Únete ahora
+                            </button>
+                        </div>
+                    </a>
+
+
+                </div>
+            </div>
+        </section>
+
+        
+    <style>
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 6px rgba(74, 222, 128, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+            }
+        }
+        .social-icon:hover {
+            transform: translateY(-3px);
+        }
+        .gradient-background {
+            background: linear-gradient(to bottom, #121a25, #111727);
+        }
+        .footer-link {
+            position: relative;
+        }
+        .footer-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #1b67d8;
+            transition: width 0.3s ease;
+        }
+        .footer-link:hover:after {
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+        @media (max-width: 480px) {
+            .footer-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+    </style>
+
+
+    
+    <!-- Footer Mejorado -->
+    <footer class="gradient-background pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Main Footer Content -->
+            <div class="footer-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-gray-700/50">
+                <!-- Brand Section -->
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="flex items-center space-x-3">
+                        <img src="/assets/img/mibylogopng.png" alt="Miby Bot Logo" class="w-22 h-22 rounded-full p-2">
+                        <h3 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-500">Miby Bot</h3>
+                    </div>
+                    <p class="text-gray-300 text-base leading-relaxed">Creando experiencias únicas para tu comunidad de Discord. Potencia tu servidor con nuestras herramientas innovadoras diseñadas para fomentar la interacción.</p>
+                    <div class="flex space-x-5">
+                        <a href="" class="social-icon text-gray-400 hover:text-blue-400 transition-all duration-300">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                            </svg>
+                        </a>
+                        <a href="" class="social-icon text-gray-400 hover:text-gray-200 transition-all duration-300">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://discord.gg/3UsDs72qMd" class="social-icon text-gray-400 hover:text-blue-400 transition-all duration-300">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 0 0-5.487 0 12.36 12.36 0 0 0-.617-1.23A.077.077 0 0 0 8.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 0 0-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 0 0 .031.055 20.03 20.03 0 0 0 5.993 2.98.078.078 0 0 0 .084-.026c.462-.62.874-1.275 1.226-1.963.021-.04.001-.088-.041-.104a13.201 13.201 0 0 1-1.872-.878.075.075 0 0 1-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 0 1 .079.009c.12.098.245.195.372.288a.075.075 0 0 1-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 0 0-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 0 0 .084.028 19.963 19.963 0 0 0 6.002-2.981.076.076 0 0 0 .032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 0 0-.031-.028zM8.02 15.278c-1.182 0-2.157-1.069-2.157-2.38 0-1.312.956-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.956 2.38-2.157 2.38zm7.975 0c-1.183 0-2.157-1.069-2.157-2.38 0-1.312.955-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.946 2.38-2.157 2.38z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="pt-4">
+                        <a href="https://discord.gg/3UsDs72qMd" class="inline-flex items-center px-5 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition-all duration-300 transform hover:-translate-y-1">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 0 0-5.487 0 12.36 12.36 0 0 0-.617-1.23A.077.077 0 0 0 8.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 0 0-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 0 0 .031.055 20.03 20.03 0 0 0 5.993 2.98.078.078 0 0 0 .084-.026c.462-.62.874-1.275 1.226-1.963.021-.04.001-.088-.041-.104a13.201 13.201 0 0 1-1.872-.878.075.075 0 0 1-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 0 1 .079.009c.12.098.245.195.372.288a.075.075 0 0 1-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 0 0-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 0 0 .084.028 19.963 19.963 0 0 0 6.002-2.981.076.076 0 0 0 .032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 0 0-.031-.028zM8.02 15.278c-1.182 0-2.157-1.069-2.157-2.38 0-1.312.956-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.956 2.38-2.157 2.38zm7.975 0c-1.183 0-2.157-1.069-2.157-2.38 0-1.312.955-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.946 2.38-2.157 2.38z"></path>
+                            </svg>
+                            Invitar a Miby
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="space-y-4">
+                    <h4 class="text-xl font-semibold text-white relative inline-block pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-blue-500 after:rounded-full">
+                        Enlaces Rápidos
+                    </h4>
+                    <ul class="space-y-3 mt-6">
+                        <li>
+                            <a href="#features" class="footer-link text-gray-300 hover:text-white transition-colors flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                Características
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#commands" class="footer-link text-gray-300 hover:text-white transition-colors flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                </svg>
+                                Comandos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#servers" class="footer-link text-gray-300 hover:text-white transition-colors flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+                                </svg>
+                                Servidores
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://discord.gg/3UsDs72qMd" class="footer-link text-gray-300 hover:text-white transition-colors flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Soporte
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div class="space-y-4">
+                    <h4 class="text-xl font-semibold text-white relative inline-block pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-blue-500 after:rounded-full">
+                        Legal
+                    </h4>
+                    <ul class="space-y-3 mt-6">
+                        <li>
+                            <a href="privacy-miby.pdf" class="footer-link text-gray-300 hover:text-white transition-colors flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path>
+                                </svg>
+                                Política de Privacidad
+                            </a>
+                        </li>
+                        <li>
+                            <a href="terms-miby.pdf" class="footer-link text-gray-300 hover:text-white transition-colors flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zM4 4h3a3 3 0 006 0h3a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm2.45 4a2.5 2.5 0 10-4.9 0h4.9zM12 9a1 1 0 100 2h3a1 1 0 100-2h-3zm-1 4a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                                </svg>
+                                Términos de Servicio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="cookies.html" class="footer-link text-gray-300 hover:text-white transition-colors flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z"></path>
+                                    <path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z"></path>
+                                    <path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z"></path>
+                                </svg>
+                                Política de Cookies
+                            </a>
+                        </li>
+                        <li>
+                            <a href="licencia.html" class="footer-link text-gray-300 hover:text-white transition-colors flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Licencia
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
-    </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/Counting.js"></script>
-    <script src="assets/js/untitled.js"></script>
+            <!-- Bottom Footer -->
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-6 md:mb-0">
+                    <p class="text-gray-400 text-sm">
+                        © 2024 Miby Bot.
+                    </p>
+                    <p class="text-gray-500 text-xs mt-2">
+                        Miby no está afiliado con Discord, Inc.
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <div class="flex items-center px-4 py-2 bg-gray-800 rounded-lg">
+                        <div class="w-3 h-3 bg-green-500 rounded-full mr-2 pulse"></div>
+                        <span class="text-sm text-gray-300">Status: Online</span>
+                    </div>
+                    <div class="flex items-center px-4 py-2 bg-gray-800 rounded-lg">
+                        <svg class="w-4 h-4 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        <span class="text-sm text-gray-300">Latencia: <span class="text-green-400 font-medium">24ms</span></span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
 </body>
 
 </html>
